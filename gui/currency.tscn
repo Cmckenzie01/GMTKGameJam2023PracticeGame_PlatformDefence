@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2iymd6iscxkd"]
+
+[ext_resource type="Texture2D" uid="uid://c7pym35gvn38e" path="res://assets/gui/GoldCoin.png" id="1_em3sb"]
+
+[node name="Currency" type="NinePatchRect"]
+process_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -109.0
+offset_top = 11.0
+offset_right = -12.0
+offset_bottom = 76.0
+grow_horizontal = 0
+scale = Vector2(0.75, 0.75)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -59.0
+offset_top = 10.0
+offset_right = -19.0
+offset_bottom = 30.0
+scale = Vector2(2.5, 2.5)
+text = "0"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -23.0
+offset_right = 338.0
+offset_bottom = 297.0
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_em3sb")

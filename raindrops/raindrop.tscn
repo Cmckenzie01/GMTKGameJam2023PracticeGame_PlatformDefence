@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu7cfonitfe4i"]
+
+[ext_resource type="Script" path="res://raindrops/raindrop.gd" id="1_ahyph"]
+[ext_resource type="Texture2D" uid="uid://65v3s4slrek2" path="res://assets/tiles/WoodenPip.png" id="2_jgp7v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bvvp"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k76qn"]
+radius = 14.0357
+
+[node name="raindrop" type="RigidBody2D"]
+collision_layer = 128
+script = ExtResource("1_ahyph")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jgp7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_1bvvp")
+
+[node name="Pickup" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_k76qn")
+
+[node name="fadeTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="body_entered" from="Pickup" to="." method="_on_pickup_body_entered"]
+[connection signal="timeout" from="fadeTimer" to="." method="_on_fade_timer_timeout"]

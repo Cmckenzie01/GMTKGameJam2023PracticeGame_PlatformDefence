@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbnlj5khuuajk"]
+
+[ext_resource type="Script" path="res://towers/caltrops_tower.gd" id="1_5olh1"]
+[ext_resource type="Texture2D" uid="uid://xu46q3ufefrt" path="res://assets/towers/d4_tower.png" id="1_t3pyu"]
+
+[node name="caltrops_tower" type="Node2D"]
+script = ExtResource("1_5olh1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t3pyu")
+
+[node name="CaltropSpawner" type="Marker2D" parent="."]
+position = Vector2(0, -14)
+
+[node name="CaltropsBag" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="create_caltrop"]

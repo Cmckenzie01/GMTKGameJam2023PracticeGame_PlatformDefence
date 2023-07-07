@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2cu6ulmxui5k"]
+
+[ext_resource type="Script" path="res://level/UpgradeShop.gd" id="1_m7l8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncbb4"]
+size = Vector2(260, 147)
+
+[node name="ShopZone" type="Area2D"]
+process_mode = 3
+position = Vector2(775, -124)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_m7l8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -17.5)
+shape = SubResource("RectangleShape2D_ncbb4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

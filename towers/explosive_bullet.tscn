@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7plv6t1yja0o"]
+
+[ext_resource type="Script" path="res://towers/explosive_bullet.gd" id="1_jm0mk"]
+[ext_resource type="Texture2D" uid="uid://b3ru2lcwsehln" path="res://assets/towers/ExplosiveGoldCoin.png" id="2_42up7"]
+[ext_resource type="Texture2D" uid="uid://x2s6hy8m82tl" path="res://assets/towers/explosion.png" id="3_6bjxm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_704i7"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ta7y3"]
+radius = 27.0
+
+[node name="ExplosiveBullet" type="CharacterBody2D"]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_jm0mk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_42up7")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 9
+priority = 1.0
+
+[node name="CollisionShape2Duplicate" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_704i7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_704i7")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(5.96046e-08, 2.98023e-07)
+scale = Vector2(0.2, 0.2)
+
+[node name="ExplosionRadius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRadius"]
+shape = SubResource("CircleShape2D_ta7y3")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExplosionRadius"]
+texture = ExtResource("3_6bjxm")
+
+[node name="ExplosionTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="ExplosionRadius" to="." method="_on_explosion_radius_body_entered"]
+[connection signal="body_exited" from="ExplosionRadius" to="." method="_on_explosion_radius_body_exited"]
+[connection signal="timeout" from="ExplosionTimer" to="." method="_on_explosion_timer_timeout"]

@@ -1,0 +1,143 @@
+[gd_scene load_steps=9 format=3 uid="uid://dg633kagdj41g"]
+
+[ext_resource type="Texture2D" uid="uid://cuny377gec3ek" path="res://assets/tiles/WoodenBoxTile.png" id="1_531qr"]
+[ext_resource type="Texture2D" uid="uid://d2blc5nrwewac" path="res://assets/tiles/RedBoxTile.png" id="2_ls055"]
+[ext_resource type="Texture2D" uid="uid://jyl8f4vqjy2a" path="res://assets/tiles/BlueBoxTile.png" id="3_pjmys"]
+[ext_resource type="Texture2D" uid="uid://bp73f37ssp4bt" path="res://assets/tiles/GreenBoxTile.png" id="4_a1qkp"]
+[ext_resource type="Texture2D" uid="uid://7x667u6c1kkp" path="res://assets/tiles/MetalBoxTile.png" id="5_abs1b"]
+[ext_resource type="Texture2D" uid="uid://djv7yabyi03lb" path="res://assets/tiles/PurpleBoxTile.png" id="6_4ryk6"]
+[ext_resource type="Texture2D" uid="uid://ci0xpdkrwuou7" path="res://assets/tiles/PinkBoxTile.png" id="7_q8n0o"]
+[ext_resource type="Texture2D" uid="uid://by7dm25bmudjn" path="res://assets/tiles/sokoban_tilesheet.png" id="8_ywyyx"]
+
+[node name="TowerBar" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 37.0
+offset_top = 11.0
+offset_right = 645.0
+offset_bottom = 71.0
+scale = Vector2(0.75, 0.75)
+
+[node name="TowerLabels" type="Control" parent="."]
+z_index = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="tower1" type="Label" parent="TowerLabels"]
+layout_mode = 0
+offset_left = -6.66667
+offset_top = 26.3333
+offset_right = 33.3333
+offset_bottom = 46.3333
+scale = Vector2(2, 2)
+text = "0"
+horizontal_alignment = 2
+
+[node name="tower2" type="Label" parent="TowerLabels"]
+layout_mode = 0
+offset_left = 71.3333
+offset_top = 27.3333
+offset_right = 111.333
+offset_bottom = 47.3333
+scale = Vector2(2, 2)
+text = "0"
+horizontal_alignment = 2
+
+[node name="tower3" type="Label" parent="TowerLabels"]
+layout_mode = 0
+offset_left = 147.333
+offset_top = 25.3333
+offset_right = 187.333
+offset_bottom = 45.3333
+scale = Vector2(2, 2)
+text = "0"
+horizontal_alignment = 2
+
+[node name="tower4" type="Label" parent="TowerLabels"]
+layout_mode = 0
+offset_left = 223.333
+offset_top = 26.3333
+offset_right = 263.333
+offset_bottom = 46.3333
+scale = Vector2(2, 2)
+text = "0"
+horizontal_alignment = 2
+
+[node name="tower5" type="Label" parent="TowerLabels"]
+layout_mode = 0
+offset_left = 304.333
+offset_top = 26.3333
+offset_right = 344.333
+offset_bottom = 46.3333
+scale = Vector2(2, 2)
+text = "0"
+horizontal_alignment = 2
+
+[node name="tower6" type="Label" parent="TowerLabels"]
+layout_mode = 0
+offset_left = 382.333
+offset_top = 26.3333
+offset_right = 422.333
+offset_bottom = 46.3333
+scale = Vector2(2, 2)
+text = "0"
+horizontal_alignment = 2
+
+[node name="tower7" type="Label" parent="TowerLabels"]
+layout_mode = 0
+offset_left = 459.333
+offset_top = 26.3333
+offset_right = 499.333
+offset_bottom = 46.3333
+scale = Vector2(2, 2)
+text = "0"
+horizontal_alignment = 2
+
+[node name="Towers" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 921.0
+offset_bottom = 69.0
+
+[node name="tower1" type="Sprite2D" parent="Towers"]
+self_modulate = Color(1, 1, 1, 0.270588)
+position = Vector2(42, 32)
+texture = ExtResource("1_531qr")
+
+[node name="tower2" type="Sprite2D" parent="Towers"]
+self_modulate = Color(1, 1, 1, 0.270588)
+position = Vector2(119, 32)
+texture = ExtResource("2_ls055")
+
+[node name="tower3" type="Sprite2D" parent="Towers"]
+self_modulate = Color(1, 1, 1, 0.270588)
+position = Vector2(194, 32)
+texture = ExtResource("3_pjmys")
+
+[node name="tower4" type="Sprite2D" parent="Towers"]
+self_modulate = Color(1, 1, 1, 0.270588)
+position = Vector2(272, 32)
+texture = ExtResource("4_a1qkp")
+
+[node name="tower5" type="Sprite2D" parent="Towers"]
+self_modulate = Color(1, 1, 1, 0.270588)
+position = Vector2(350, 32)
+texture = ExtResource("5_abs1b")
+
+[node name="tower6" type="Sprite2D" parent="Towers"]
+self_modulate = Color(1, 1, 1, 0.270588)
+position = Vector2(428, 32)
+texture = ExtResource("6_4ryk6")
+
+[node name="tower7" type="Sprite2D" parent="Towers"]
+self_modulate = Color(1, 1, 1, 0.270588)
+position = Vector2(506, 32)
+texture = ExtResource("7_q8n0o")
+
+[node name="selector" type="Sprite2D" parent="Towers"]
+position = Vector2(195, 32)
+texture = ExtResource("8_ywyyx")
+hframes = 13
+vframes = 8
+frame = 13

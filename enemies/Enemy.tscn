@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://c73jtdxmxb767"]
+
+[ext_resource type="Script" path="res://enemies/Enemy.gd" id="1_t7hqv"]
+[ext_resource type="Texture2D" uid="uid://cemd3o4hiohfr" path="res://assets/sprites/RedSlime.png" id="2_yyy2p"]
+[ext_resource type="Texture2D" uid="uid://c0i8bcsvk8pbx" path="res://assets/sprites/burn.png" id="3_hlciy"]
+[ext_resource type="Texture2D" uid="uid://bfld4x67h04m0" path="res://assets/sprites/slow.png" id="3_nirya"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ie5vy"]
+radius = 12.0416
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5ha6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smpcg"]
+bg_color = Color(0.133333, 0.564706, 0.160784, 1)
+
+[node name="Enemy" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 12
+collision_mask = 3
+script = ExtResource("1_t7hqv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_yyy2p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_ie5vy")
+
+[node name="EffectTimer" type="Timer" parent="."]
+
+[node name="DamageTextTimer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="DamageLabel" type="RichTextLabel" parent="."]
+visible = false
+z_index = 5
+offset_left = -26.0
+offset_top = -19.0
+offset_right = -2.0
+offset_bottom = -1.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+text = "1"
+fit_content = true
+
+[node name="EffectContainer" type="Node2D" parent="."]
+position = Vector2(17, -16)
+
+[node name="slow" type="Sprite2D" parent="EffectContainer"]
+visible = false
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_nirya")
+
+[node name="burn" type="Sprite2D" parent="EffectContainer"]
+visible = false
+texture = ExtResource("3_hlciy")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -12.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = -14.0
+theme_override_styles/background = SubResource("StyleBoxFlat_n5ha6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_smpcg")
+step = 1.0
+show_percentage = false
+
+[node name="KnockbackTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="EffectTimer" to="." method="apply_periodic_effects"]
+[connection signal="timeout" from="DamageTextTimer" to="." method="_on_damage_text_timer_timeout"]

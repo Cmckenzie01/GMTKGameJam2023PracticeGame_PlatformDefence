@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://tq5jqsdpk6xe"]
+
+[ext_resource type="Script" path="res://towers/shooter_tower.gd" id="1_vg6sv"]
+[ext_resource type="Texture2D" uid="uid://dtknwnp10mpr0" path="res://assets/towers/d6_tower.png" id="2_umgv4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_037p6"]
+radius = 300.0
+
+[node name="ShooterTower" type="Node2D"]
+script = ExtResource("1_vg6sv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_umgv4")
+
+[node name="ShooterPosition" type="Marker2D" parent="."]
+position = Vector2(0, -32)
+
+[node name="RangeDetector" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="RangeCollider" type="CollisionShape2D" parent="RangeDetector"]
+shape = SubResource("CircleShape2D_037p6")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 9
+
+[connection signal="body_entered" from="RangeDetector" to="." method="_on_range_detector_body_entered"]
+[connection signal="body_exited" from="RangeDetector" to="." method="_on_range_detector_body_exited"]

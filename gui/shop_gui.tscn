@@ -1,0 +1,462 @@
+[gd_scene load_steps=16 format=3 uid="uid://s08im7veeog1"]
+
+[ext_resource type="Script" path="res://level/ShopGUI.gd" id="1_fuuh1"]
+[ext_resource type="Texture2D" uid="uid://bq3by71gtr0ae" path="res://assets/gui/store_front.png" id="2_oftna"]
+[ext_resource type="Texture2D" uid="uid://cuny377gec3ek" path="res://assets/tiles/WoodenBoxTile.png" id="3_s0eex"]
+[ext_resource type="Texture2D" uid="uid://dq5q0lxwt6236" path="res://assets/gui/SpeedUpTile.png" id="3_tt4ub"]
+[ext_resource type="Texture2D" uid="uid://c7pym35gvn38e" path="res://assets/gui/GoldCoin.png" id="4_pmugy"]
+[ext_resource type="Texture2D" uid="uid://d2blc5nrwewac" path="res://assets/tiles/RedBoxTile.png" id="5_mc5df"]
+[ext_resource type="Texture2D" uid="uid://byx5wqeo7ck74" path="res://assets/gui/JumpUpTile.png" id="5_xlsnh"]
+[ext_resource type="Texture2D" uid="uid://b1df55ngybq82" path="res://assets/gui/FloatUpTile.png" id="6_r81y7"]
+[ext_resource type="Texture2D" uid="uid://jyl8f4vqjy2a" path="res://assets/tiles/BlueBoxTile.png" id="6_wuk5w"]
+[ext_resource type="Texture2D" uid="uid://bp73f37ssp4bt" path="res://assets/tiles/GreenBoxTile.png" id="7_pufsu"]
+[ext_resource type="Texture2D" uid="uid://dn5q55tavuwq3" path="res://assets/gui/HealUpTile.png" id="7_wwvml"]
+[ext_resource type="Texture2D" uid="uid://mry6oa4trkni" path="res://assets/gui/MysteryTile.png" id="8_73r8a"]
+[ext_resource type="Texture2D" uid="uid://7x667u6c1kkp" path="res://assets/tiles/MetalBoxTile.png" id="8_f3e66"]
+[ext_resource type="Texture2D" uid="uid://djv7yabyi03lb" path="res://assets/tiles/PurpleBoxTile.png" id="9_6iung"]
+[ext_resource type="Texture2D" uid="uid://ci0xpdkrwuou7" path="res://assets/tiles/PinkBoxTile.png" id="10_gj7e8"]
+
+[node name="ShopGUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fuuh1")
+
+[node name="characterUpgrades" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.654902)
+layout_mode = 0
+offset_left = 862.0
+offset_top = 101.0
+offset_right = 1202.0
+offset_bottom = 417.0
+texture = ExtResource("2_oftna")
+
+[node name="Label" type="Label" parent="characterUpgrades"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 28.0
+offset_right = 258.0
+offset_bottom = 50.0
+scale = Vector2(1.5, 1.5)
+text = "Upgrade Character"
+
+[node name="PlayerUpgrade1" type="Button" parent="characterUpgrades"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 70.0
+offset_right = 114.0
+offset_bottom = 142.0
+icon = ExtResource("3_tt4ub")
+
+[node name="TextureRect" type="TextureRect" parent="characterUpgrades/PlayerUpgrade1"]
+z_index = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = 46.0
+offset_right = 366.0
+offset_bottom = 366.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="characterUpgrades/PlayerUpgrade1"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 61.0
+offset_right = 58.0
+offset_bottom = 81.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="characterUpgrades/PlayerUpgrade1"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -4.0
+offset_right = 64.0
+offset_bottom = 16.0
+text = "Speed"
+
+[node name="PlayerUpgrade2" type="Button" parent="characterUpgrades"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 72.0
+offset_right = 205.0
+offset_bottom = 144.0
+icon = ExtResource("5_xlsnh")
+
+[node name="TextureRect" type="TextureRect" parent="characterUpgrades/PlayerUpgrade2"]
+z_index = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = 46.0
+offset_right = 366.0
+offset_bottom = 366.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="characterUpgrades/PlayerUpgrade2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 61.0
+offset_right = 58.0
+offset_bottom = 81.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="characterUpgrades/PlayerUpgrade2"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -6.0
+offset_right = 73.0
+offset_bottom = 14.0
+text = "Jump"
+
+[node name="PlayerUpgrade3" type="Button" parent="characterUpgrades"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 70.0
+offset_right = 294.0
+offset_bottom = 142.0
+icon = ExtResource("6_r81y7")
+
+[node name="TextureRect" type="TextureRect" parent="characterUpgrades/PlayerUpgrade3"]
+z_index = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = 46.0
+offset_right = 366.0
+offset_bottom = 366.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="characterUpgrades/PlayerUpgrade3"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 61.0
+offset_right = 58.0
+offset_bottom = 81.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="characterUpgrades/PlayerUpgrade3"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -5.0
+offset_right = 69.0
+offset_bottom = 15.0
+text = "Float"
+
+[node name="PlayerUpgrade4" type="Button" parent="characterUpgrades"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 183.0
+offset_right = 116.0
+offset_bottom = 255.0
+icon = ExtResource("7_wwvml")
+
+[node name="TextureRect" type="TextureRect" parent="characterUpgrades/PlayerUpgrade4"]
+z_index = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = 46.0
+offset_right = 366.0
+offset_bottom = 366.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="characterUpgrades/PlayerUpgrade4"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 61.0
+offset_right = 58.0
+offset_bottom = 81.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="characterUpgrades/PlayerUpgrade4"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = -7.0
+offset_right = 71.0
+offset_bottom = 13.0
+text = "Heal"
+
+[node name="PlayerUpgrade5" type="Button" parent="characterUpgrades"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 185.0
+offset_right = 206.0
+offset_bottom = 257.0
+icon = ExtResource("8_73r8a")
+
+[node name="TextureRect" type="TextureRect" parent="characterUpgrades/PlayerUpgrade5"]
+z_index = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = 46.0
+offset_right = 366.0
+offset_bottom = 366.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="characterUpgrades/PlayerUpgrade5"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 61.0
+offset_right = 58.0
+offset_bottom = 81.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="characterUpgrades/PlayerUpgrade5"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 77.0
+offset_bottom = 15.0
+text = "Mystery"
+
+[node name="towerShop" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.654902)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 101.0
+offset_right = 437.0
+offset_bottom = 417.0
+texture = ExtResource("2_oftna")
+
+[node name="Label" type="Label" parent="towerShop"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 28.0
+offset_right = 272.0
+offset_bottom = 50.0
+scale = Vector2(1.5, 1.5)
+text = "Buy Extra Towers"
+
+[node name="Tower1Button" type="Button" parent="towerShop"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 68.0
+offset_right = 114.0
+offset_bottom = 140.0
+icon = ExtResource("3_s0eex")
+
+[node name="TextureRect" type="TextureRect" parent="towerShop/Tower1Button"]
+z_index = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = 33.0
+offset_right = 350.0
+offset_bottom = 353.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="towerShop/Tower1Button"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 48.0
+offset_right = 42.0
+offset_bottom = 68.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Tower2Button" type="Button" parent="towerShop"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 68.0
+offset_right = 202.0
+offset_bottom = 140.0
+icon = ExtResource("5_mc5df")
+
+[node name="TextureRect" type="TextureRect" parent="towerShop/Tower2Button"]
+z_index = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 34.0
+offset_right = 351.0
+offset_bottom = 354.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="towerShop/Tower2Button"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 49.0
+offset_right = 43.0
+offset_bottom = 69.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "50"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Tower3Button" type="Button" parent="towerShop"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 68.0
+offset_right = 294.0
+offset_bottom = 140.0
+icon = ExtResource("6_wuk5w")
+
+[node name="TextureRect" type="TextureRect" parent="towerShop/Tower3Button"]
+z_index = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 33.0
+offset_right = 351.0
+offset_bottom = 353.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="towerShop/Tower3Button"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 48.0
+offset_right = 43.0
+offset_bottom = 68.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "45"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Tower4Button" type="Button" parent="towerShop"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 154.0
+offset_right = 111.0
+offset_bottom = 226.0
+icon = ExtResource("7_pufsu")
+
+[node name="TextureRect" type="TextureRect" parent="towerShop/Tower4Button"]
+z_index = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 32.0
+offset_right = 351.0
+offset_bottom = 352.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="towerShop/Tower4Button"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 43.0
+offset_bottom = 67.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "25"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Tower5Button" type="Button" parent="towerShop"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 153.0
+offset_right = 204.0
+offset_bottom = 225.0
+icon = ExtResource("8_f3e66")
+
+[node name="TextureRect" type="TextureRect" parent="towerShop/Tower5Button"]
+z_index = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 352.0
+offset_bottom = 352.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="towerShop/Tower5Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 47.0
+offset_right = 44.0
+offset_bottom = 67.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "35"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Tower6Button" type="Button" parent="towerShop"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 155.0
+offset_right = 294.0
+offset_bottom = 227.0
+icon = ExtResource("9_6iung")
+
+[node name="TextureRect" type="TextureRect" parent="towerShop/Tower6Button"]
+z_index = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 352.0
+offset_bottom = 353.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="towerShop/Tower6Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = 44.0
+offset_bottom = 68.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "60"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Tower7Button" type="Button" parent="towerShop"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 234.0
+offset_right = 203.0
+offset_bottom = 306.0
+icon = ExtResource("10_gj7e8")
+
+[node name="TextureRect" type="TextureRect" parent="towerShop/Tower7Button"]
+z_index = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 352.0
+offset_bottom = 352.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_pmugy")
+
+[node name="Label" type="Label" parent="towerShop/Tower7Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 47.0
+offset_right = 44.0
+offset_bottom = 67.0
+theme_override_colors/font_shadow_color = Color(0, 0.101961, 0, 1)
+text = "30"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="pressed" from="characterUpgrades/PlayerUpgrade1" to="." method="_on_player_upgrade_1_pressed"]
+[connection signal="pressed" from="characterUpgrades/PlayerUpgrade2" to="." method="_on_player_upgrade_2_pressed"]
+[connection signal="pressed" from="characterUpgrades/PlayerUpgrade3" to="." method="_on_player_upgrade_3_pressed"]
+[connection signal="pressed" from="characterUpgrades/PlayerUpgrade4" to="." method="_on_player_upgrade_4_pressed"]
+[connection signal="pressed" from="characterUpgrades/PlayerUpgrade5" to="." method="_on_player_upgrade_5_pressed"]
+[connection signal="pressed" from="towerShop/Tower1Button" to="." method="_on_tower_1_button_pressed"]
+[connection signal="pressed" from="towerShop/Tower2Button" to="." method="_on_tower_2_button_pressed"]
+[connection signal="pressed" from="towerShop/Tower3Button" to="." method="_on_tower_3_button_pressed"]
+[connection signal="pressed" from="towerShop/Tower4Button" to="." method="_on_tower_4_button_pressed"]
+[connection signal="pressed" from="towerShop/Tower5Button" to="." method="_on_tower_5_button_pressed"]
+[connection signal="pressed" from="towerShop/Tower6Button" to="." method="_on_tower_6_button_pressed"]
+[connection signal="pressed" from="towerShop/Tower7Button" to="." method="_on_tower_7_button_pressed"]

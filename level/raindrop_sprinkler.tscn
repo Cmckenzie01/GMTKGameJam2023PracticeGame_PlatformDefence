@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqfq50sr6ddj8"]
+
+[ext_resource type="Script" path="res://level/RaindropSprinkler.gd" id="1_0l4vn"]
+
+[node name="RaindropSprinkler" type="Node2D"]
+position = Vector2(906, -303)
+script = ExtResource("1_0l4vn")
+
+[node name="RaindropSpawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="RaindropSpawnTimer" to="." method="_on_raindrop_spawn_timer_timeout"]
